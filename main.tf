@@ -14,6 +14,14 @@ locals {
 # Networking module - Sets up VPC, subnets, NAT, etc.
 module "networking" {
   source = "./modules/networking"
+  # Source path to the networking module
+  # This module creates a VPC network, subnets, and NAT gateway
+  # It also sets up secondary IP ranges for GKE
+  # and outputs the necessary IDs and names for other modules to use
+  # The module is parameterized with the project ID, region, and other variables
+  # to allow for flexibility and reusability
+  # The module also applies common labels to all resources created within it
+  # to facilitate resource management and organization
 
   project_id         = var.project_id
   region             = var.region
