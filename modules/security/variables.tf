@@ -23,22 +23,20 @@ variable "application_name" {
   type        = string
 }
 
-variable "service_account_email" {
-  description = "Email of the service account to grant bucket access"
+variable "vpc_id" {
+  description = "ID of the VPC network"
   type        = string
 }
 
-variable "kms_crypto_key" {
-  description = "KMS Crypto Key for bucket encryption"
+# Optional variable for VPC Service Perimeter
+variable "access_policy_id" {
+  description = "Access Policy ID for VPC Service Controls"
   type        = string
+  default     = null
 }
 
-variable "storage_class" {
-  description = "Storage class for the bucket"
-  type        = string
-  default     = "STANDARD"
-  validation {
-    condition     = contains(["STANDARD", "NEARLINE", "COLDLINE", "ARCHIVE"], var.storage_class)
-    error_message = "Storage class must be one of: STANDARD, NEARLINE, COLDLINE, ARCHIVE"
-  }
+variable "secret_rotation_period" {
+  description = "Rotation period for secrets in days"
+  type        = number
+  default     = 90
 }
