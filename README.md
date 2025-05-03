@@ -163,9 +163,6 @@ Configured monitoring includes:
 
 ## 📧 Contact
 
-**Infrastructure Team**
-- Email: infrastructure@yourcompany.com
-- Slack: #infrastructure-support
 
 ---
 
